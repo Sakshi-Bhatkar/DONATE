@@ -25,7 +25,7 @@ useEffect(() => {
   element.classList.remove("dark");
   localStorage.setItem("theme", "light");
  }
-}, [theme]);
+}, ["theme"]);
   return (
     <>
       <nav className='bg-gradient-to-l from-teal-900 via-teal-800 to-teal-900 text-white fixed top-left-0 w-full border-primary/'>
@@ -72,15 +72,7 @@ useEffect(() => {
             </div>
             {/*Mobile Section Menu*/}
             <div className="md:hidden flex items-center gap-4">
-            {/*Theme change*/}
-                {theme === "dark" ? (
-                  <BiSolidSun className='text-2xl' onClick={() => setTheme ("light")} 
-                  />
-                ): (
-                  <BiSolidMoon className='text-2xl' onClick={() => setTheme ("dark")} 
-                  />
-                )}
-
+          
                 {
                   showMenu ? (
                     <HiMenuAlt1 onClick={toggleMenu}

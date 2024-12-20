@@ -75,10 +75,14 @@ const Hero = () => {
                     initial="initial"
                     animate="animate"
                     className='btn-primary'>Get Started</motion.button>
+
                     <motion.button 
                     variants={FadeUp(0.7)}
                     initial="initial"
-                    animate="animate" className='btn-outline'>Login</motion.button>
+                    animate="animate" 
+                    className='btn-outline'
+                    
+                    >Login</motion.button>
                     </div>
                     </div>
                     {/*Form*/}
