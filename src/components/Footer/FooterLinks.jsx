@@ -1,5 +1,5 @@
-import { li } from 'motion/react-client';
-import React from 'react'
+
+
 
 const FooterLinks = ({ links }) => {
   return (

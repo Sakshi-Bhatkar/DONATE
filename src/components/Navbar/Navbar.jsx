@@ -1,34 +1,31 @@
 /* eslint-disable react/jsx-no-undef */
-import React, {useState, useEffect} from 'react';
+import  {useState} from 'react';
+
+//import { BrowserRouter as Router, Routes,Route,Outlet, Link } from 'react-router-dom';
+
+
 import { IoMdArrowDropdown } from "react-icons/io";
-import { BiPhoneCall, BiSolidSun, BiSolidMoon } from 'react-icons/bi';
+import { BiPhoneCall} from 'react-icons/bi';
 import { HiMenuAlt1 , HiMenuAlt3 } from 'react-icons/hi';
 import ResponsiveMenu from '../ResponsiveMenu';
-
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light" 
-);
+
 const [showMenu, setShowMenu] = useState(false);
-const element = document.documentElement;
+
 
  const toggleMenu =() =>{
   setShowMenu(!showMenu);
  };
 
-useEffect(() => {
- if (theme === "dark") {
-  element.classList.add("dark");
-  localStorage.setItem("theme", "dark");
- } else {
-  element.classList.remove("dark");
-  localStorage.setItem("theme", "light");
- }
-}, ["theme"]);
   return (
     <>
-      <nav className='bg-gradient-to-l from-teal-900 via-teal-800 to-teal-900 text-white fixed top-left-0 w-full border-primary/'>
+    {/**/}
+    
+    {/**/}
+      <nav className='bg-gradient-to-l from-teal-900 via-teal-800 to-teal-900 text-white w-full border-primary/'>
         <div className="container">
           <div className='flex items-center justify-between h-[70px] py-2'>
             {/*Logo*/}
@@ -48,13 +45,17 @@ useEffect(() => {
                   {/*Dropdown*/}
                   <div className="absolute -left-9 z-[99999] hidden w-[150px] bg-white shadow-md p-2 text-black rounded-md group-hover:block">
                     <ul className='space-y-3'>
-                      <li className='p-2 hover:bg-teal-300'>Services</li>
-                      <li className='p-2 hover:bg-teal-300'>About Us</li>
-                      <li className='p-2 hover:bg-teal-300'> Privacy Policy</li>
+                      
+                      <li className='p-2 hover:bg-teal-300'><a href="https://skiblogs00.blogspot.com/" >Blog</a></li>
+                      <NavLink to="/services"><li className='p-2 hover:bg-teal-300'>Services</li></NavLink>
                     </ul>
                   </div>
                 </li>
-                <li>About Us</li>
+                
+                
+                {/**/}
+                <NavLink to="/aboutus" >About Us</NavLink>
+                {/**/}
                 <li>
                   <div className='flex items-center gap-4'> 
                     {/*icon*/}
@@ -72,7 +73,6 @@ useEffect(() => {
             </div>
             {/*Mobile Section Menu*/}
             <div className="md:hidden flex items-center gap-4">
-          
                 {
                   showMenu ? (
                     <HiMenuAlt1 onClick={toggleMenu}
@@ -90,6 +90,13 @@ useEffect(() => {
       </nav>
       {/*Mobile Sidebar Menu*/}
      < ResponsiveMenu showMenu= {showMenu} />
+     {/* <Routes>
+     <Route path='/' element={<blog/>} />
+    </Routes>
+  
+  <Outlet />
+     */}
+      
     </>
   )
 };

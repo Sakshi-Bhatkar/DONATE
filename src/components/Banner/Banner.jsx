@@ -24,7 +24,7 @@ const Banner = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, officia.
                 </li>
             </ul>
-            <button className='btn-primary'>Get Started</button>
+            <button className='btn-primary' onClick={"https://www.youtube.com/embed/bZQEiMAZn9Q?si=qMn4o5sUt5IDGfHg"}>Get Started</button>
         </div>
 
        </div>

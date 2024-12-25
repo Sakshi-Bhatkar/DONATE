@@ -1,7 +1,13 @@
 import React from 'react';
 import { motion } from "motion/react"
 import HeroImg from "../../assets/7.jpg"
-
+//import { BrowserRouter as Router, Routes,Route, Link } from 'react-router-dom';
+import VideoBanner from '../VideoBanner/VideoBanner';
+import OverviewCounter from"../OverviewCounter/OverviewCounter"
+import OurVision from"../OurVision/OurVision"
+import Banner from"../Banner/Banner"
+import Banner2 from "../Banner/Banner2"
+import Blogs from "../../Blogs/Blogs"
 
 const bgStyle ={
     backgroundImage: `url(${HeroImg})`,
@@ -52,6 +58,7 @@ const Hero = () => {
      };
 
   return (
+    <>
   <div style={bgStyle}>
     <div className='min-h-[650px] md:min-h-[750px] bg-gradient-to-r from-black/80 to-primary/60 pt-32 pb-10 md:pt-48'>
         <div className="container ">
@@ -67,21 +74,21 @@ const Hero = () => {
                     variants={FadeUp(0.4)}
                     initial="initial"
                     animate="animate">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem eaque, porro doloribus ut quam tenetur.
+                        Unity Funds peer-to-peer fundraising pages are 8 times more likely to convert traffic to a donation than industry benchmarks. Combine those statistics with easy-to-create campaigns with recurring donations, and you should see an uptick in revenue in no time at all..
                     </motion.p>
                     <div className='space-x-4'>
                     <motion.button 
                     variants={FadeUp(0.6)}
                     initial="initial"
                     animate="animate"
-                    className='btn-primary'>Get Started</motion.button>
+                    className='btn-primary'>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe--gIDGBipwkFCDhUy3k5lBfEgAi38mPjufzkX_Rn2lQ1N6A/viewform?usp=sharing">Get Started</a></motion.button>
 
                     <motion.button 
                     variants={FadeUp(0.7)}
                     initial="initial"
                     animate="animate" 
                     className='btn-outline'
-                    
                     >Login</motion.button>
                     </div>
                     </div>
@@ -129,6 +136,14 @@ const Hero = () => {
         </div>
     </div>
   </div> 
+  <OverviewCounter/>
+  <OurVision/>
+  <Banner/>
+  <Banner2/>
+  <VideoBanner/>
+  <Blogs/>
+  
+  </>
   );
 };
 

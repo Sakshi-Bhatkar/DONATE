@@ -1,8 +1,7 @@
-import React from 'react'
+
 import {
     FaFacebook,
     FaInstagram,
-    FaLinkedin,
     FaLocationArrow,
     FaMobileAlt,
     FaTwitter,
@@ -37,7 +36,7 @@ const Links =[
 ];
 const Footer = () => {
   return (
-  <div className='text-white rounded-t-3xl bg-gradient-to-r from-violet-950 to to-violet-900'>
+  <div className='text-white  bg-gradient-to-r from-violet-950 to to-violet-900 '>
       <div className='mx-auto max-w-[1200px] p-4'>
         {/*footer containt section*/}
           <div className='grid py-5 md:grid-cols-3'>
